@@ -33,7 +33,6 @@ void render_single(
             if (iterations == Mandelbrot::MAX_ITERATIONS) {
                 r = g = b = 0;
             } else {
-                double t = log(1.0 + iterations) / log(1.0 + Mandelbrot::MAX_ITERATIONS);
                 r = static_cast<uint8_t>(sin(0.016 * iterations + 4) * 230 + 25);
                 g = static_cast<uint8_t>(sin(0.013 * iterations + 2) * 230 + 25);
                 b = static_cast<uint8_t>(sin(0.01 * iterations + 1) * 230 + 25);
@@ -67,7 +66,6 @@ void render_worker(
             if (iterations == Mandelbrot::MAX_ITERATIONS) {
                 r = g = b = 0; // inside black
             } else {
-                double t = log(1.0 + iterations) / log(1.0 + Mandelbrot::MAX_ITERATIONS);
                 r = static_cast<uint8_t>(sin(0.016 * iterations + 4) * 230 + 25);
                 g = static_cast<uint8_t>(sin(0.013 * iterations + 2) * 230 + 25);
                 b = static_cast<uint8_t>(sin(0.01 * iterations + 1) * 230 + 25);
